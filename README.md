@@ -8,12 +8,6 @@ Context-aware keylogger/credential harvester - passive OCR triggers active keyst
 
 Click the thumbnail above to watch the demo on YouTube.
 
----------------------------------------------
-
-## Flow
-
-
-<img width="907" height="699" alt="EspioFlow" src="https://github.com/user-attachments/assets/ee43fe9d-87b8-4ad2-836f-ce5a72921c8c" />
 
 ----------------------------------------------
 
