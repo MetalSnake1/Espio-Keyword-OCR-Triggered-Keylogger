@@ -80,7 +80,7 @@ When the Windows OS is utilizing Copilot+ / Recall, it is already doing periodic
 This leads me to be interested in developing context-aware malware, using Espio as a fundamental component of later research. I have been thinking about ways to implement persistence for Espio, and I would like to implement a sort of watchdog that basically looks for Espio, sees if it stops, and then if it does stop, the watchdog will respawn Espio again. The watchdog would be a Windows process that utilizes some sort of obfuscation - I haven't really read too much into this, but from my understanding, it should be possible. There are a few other things I would like to implement, but it's mostly theoretical - I just want to say that I plan on evolving Espio.
 
 ## Near-Future Features
-For the near future, I definitely want to implement these features:
+For the near future, I want to implement these features:
 
 - Quieter polling with reduced key sets - I've got to get those 80,000+ syscalls per second during active mode down. I need to reduce which keys are actually polled, because usually only about 50-60 keys are actually used in passwords/usernames.
 - Clipboard and cookie exfiltration.
