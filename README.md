@@ -50,15 +50,21 @@ For C2 communication, Espio sends data to Discord webhooks using WinHTTP over HT
 
 ## Some Problems
 
+------------------------------------------
+
 RWX Memory Allocation
 
 My indirect syscall stub is 21 bytes allocated with VirtualAlloc, using PAGE_EXECUTE_READWRITE. That is well known by EDR heuristics. Legitimate applications almost never need memory that is simultaneously writable and executable. A lot of popular EDR products monitor for private RWX (read, write, execute) allocations. Some even flag on the VirtualAlloc call itself.
 
 One workaround I was thinking of is that if I could make it so Espio masquerades or injects into a JIT process, its own RWX memory allocations blend in with the process's expected behavior. A JIT process is any process that compiles code at runtime rather than ahead of time. A JIT process repeatedly allocates executable memory during normal operations because it is compiling code on the fly as it is needed.
 
+-------------------------------------------------
+
 Aggressive Polling
 
 Here's another major point of failure. The polling in this program is very, very aggressive. It polls 80+ keys in around ~1ms, which means there are around 80,000 syscalls per second during active mode. That's unusual behavior, lol. Additionally, CPU usage spikes during the active window, which gives way to another detectable pattern.
+
+-------------------------------------------------
 
 Passive-to-Active Mode Latency
 
