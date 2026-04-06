@@ -82,7 +82,7 @@ This leads me to be interested in developing context-aware malware, using Espio 
 ## Near-Future Features
 For the near future, I definitely want to implement these features:
 
-Quieter polling with reduced key sets - I've got to get those 80,000+ syscalls per second during active mode down. I need to reduce which keys are actually polled, because usually only about 50-60 keys are actually used in passwords/usernames.
-Clipboard and cookie exfiltration.
-Get rid of Discord as the C2 server. I'd like to include bidirectional communication, so I can include keyword list updates, configurable polling parameters, a kill switch, and tasking.
+- Quieter polling with reduced key sets - I've got to get those 80,000+ syscalls per second during active mode down. I need to reduce which keys are actually polled, because usually only about 50-60 keys are actually used in passwords/usernames.
+- Clipboard and cookie exfiltration.
+- Get rid of Discord as the C2 server. I'd like to include bidirectional communication, so I can include keyword list updates, configurable polling parameters, a kill switch, and tasking.
 A display affinity bypass.
