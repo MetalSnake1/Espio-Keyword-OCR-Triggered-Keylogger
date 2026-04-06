@@ -1,5 +1,5 @@
 # Espio---Keyword-OCR-Triggered-Keylogger
-Context-aware keylogger - passive OCR triggers active keystroke capture via indirect syscalls.
+Context-aware keylogger/credential harvester - passive OCR triggers active keystroke capture via indirect syscalls.
 
 
 ## Demo Video
