@@ -39,7 +39,6 @@ I also need to quickly explain what a PEB is. PEB stands for Process Environment
 Finding and Executing the Syscall
 Now that you understand contextually and conceptually where I am coming from, you will understand why I needed to make a syscall. First, I needed to find where win32u.dll is actually loaded - I used PEB walking to do so. After doing that, I did something called PE Export Parsing - this tells you where in win32u.dll NtUserGetAsyncKeyState is actually loaded. After that you will finally have a syscall number which can be used to call NtUserGetAsyncKeyState and get around that pesky front door some EDRs hook.
 
-And... that's not all.
 
 ## Indirect Syscalls
 Once you finally have a syscall number, you have a problem - the return address in the call stack points to your RWX memory allocation, not a Microsoft DLL, and modern EDR does stack analysis. So, instead of executing the syscall instruction in your memory, you find a syscall; ret gadget (bytes 0F 05 C3) that is already inside win32u.dll - then you jump to it. Now the return address of the syscall points to a legitimate Microsoft module (win32u.dll) instead of your own RWX memory allocation.
